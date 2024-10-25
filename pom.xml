@@ -63,21 +63,18 @@
         </plugins>
     </build>
 
-    <repositories>
+    <distributionManagement>
         <repository>
-            <id>nexus-ebi-release-repo</id>
-            <url>https://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-repo/</url>
+            <id>pst-release</id>
+            <name>EBI Nexus Repository</name>
+            <url>https://www.ebi.ac.uk/Tools/maven/repos/content/repositories/pst-release</url>
         </repository>
-        <repository>
-            <id>nexus-ebi-snapshot-repo</id>
-            <url>https://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-snapshots/</url>
-        </repository>
-        <repository>
-            <id>central maven repo</id>
-            <name>central maven repo https</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </repository>
-    </repositories>
+        <snapshotRepository>
+            <id>pst-snapshots</id>
+            <name>EBI Nexus Snapshots Repository</name>
+            <url>https://www.ebi.ac.uk/Tools/maven/repos/content/repositories/pst-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <scm>
         <connection>scm:git:https://github.com/PRIDE-Utilities/pubmed-id-fetcher</connection>
