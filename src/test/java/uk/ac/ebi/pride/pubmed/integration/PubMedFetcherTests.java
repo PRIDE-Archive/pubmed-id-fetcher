@@ -38,7 +38,7 @@ public class PubMedFetcherTests {
   private void assertSummaryReference(Reference summary) throws Exception {
     Assert.isTrue(summary!=null, "Summary cannot be null!");
     Assert.isTrue(!StringUtils.isEmpty(summary.getReferenceLine()), "Summary RefLine cannot be null or empty!");
-    Assert.isTrue((PubMedFetcher.getPubMedSummaryFromPubmed("22147733") != null));
+    Assert.isTrue((PubMedFetcher.getPubMedSummaryFromPubmed("22147733") != null), "");
     Assert.isTrue(summary !=null, "Summary Result cannot be null!");
     log.info("Summary reference: " + summary.getReferenceLine());
     log.info("Summary reference: " + PubMedFetcher.getPubMedSummaryFromPubmed("22147733").getReferenceLine());
@@ -57,6 +57,6 @@ public class PubMedFetcherTests {
 
   @Test
   public void isPubMedSummaryByProjectAccession() throws Exception {
-    Assert.isTrue(PubMedFetcher.getPubMedSummaryByProjectAccession("PXD025705").getPmid().equals("35508466"));
+    Assert.isTrue(PubMedFetcher.getPubMedSummaryByProjectAccession("PXD025705").getPmid().equals("35508466"), "");
   }
 }

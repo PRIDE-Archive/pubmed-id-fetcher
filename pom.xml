@@ -4,7 +4,7 @@
 
     <groupId>uk.ac.ebi.pride.pubmed</groupId>
     <artifactId>pubmed-id-fetcher</artifactId>
-    <version>2.0.10-SNAPSHOT</version>
+    <version>21-0.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <parent>
@@ -14,62 +14,54 @@
     </parent>
 
     <properties>
-        <uk.ac.ebi.pride.architectural-pride-tdd.version>1.0.3</uk.ac.ebi.pride.architectural-pride-tdd.version>
-        <uk.ac.ebi.pride.architectural-pride-logging.version>1.0.0</uk.ac.ebi.pride.architectural-pride-logging.version>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <skipTests>true</skipTests>
+        <jackson.version>2.13.4</jackson.version>
+        <lombok.version>1.18.34</lombok.version>
+        <common-codec.version>1.15</common-codec.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>6.1.14</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.7.2</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Tests.java</include>
-                    </includes>
-                    <junitArtifactName>junit:junit</junitArtifactName>
-                </configuration>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.1.0</version>
             </plugin>
         </plugins>
     </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>uk.ac.ebi.pride.architectural</groupId>
-            <artifactId>pride-logging</artifactId>
-            <type>pom</type>
-            <version>${uk.ac.ebi.pride.architectural-pride-logging.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>uk.ac.ebi.pride.architectural</groupId>
-            <artifactId>pride-tdd</artifactId>
-            <type>pom</type>
-            <version>${uk.ac.ebi.pride.architectural-pride-tdd.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.12.6.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>6.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 
     <repositories>
         <repository>
