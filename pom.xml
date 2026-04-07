@@ -13,7 +13,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <skipTests>true</skipTests>
-        <jackson.version>2.13.4</jackson.version>
+        <jackson.version>2.13.4.2</jackson.version>
         <lombok.version>1.18.34</lombok.version>
         <common-codec.version>1.15</common-codec.version>
     </properties>
